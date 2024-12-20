@@ -1,11 +1,23 @@
 function sortByRating(shops) {
   // Start coding here
+  const n = shops.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - 1 - i; j++) {
+      if (shops[j].rating < shops[j + 1].rating) {
+        let temp = shops[j];
+        shops[j] = shops[j + 1];
+        shops[j + 1] = temp;
+      }
+    }
+  }
+  return shops;
 }
 
 /* 
-  1. ควรใช้ Algorithm ใดในการแก้โจทย์นี้ 
-  2. ให้เหตุผลประกอบว่าทำไมถึงเลือกใช้ Algorithm นี้
+  1. ควรใช้ Algorithm ใดในการแก้โจทย์นี้ Bubble Sort
+  2. ให้เหตุผลประกอบว่าทำไมถึงเลือกใช้ Algorithm นี้ เป็น algorithm ที่ใช้ในการจัดเรียงข้อมูล สามารถจัดให้แสดงผลจากน้อยไปมาก หรือมากไปน้อยได้
   3. ให้ระบุว่า Big O Notation ของ Function นี้คือเท่าไร เพราะอะไร
+  เป็น O(n²) เพราะ ใช้ loop ซ้อน loop 
 */
 
 const shops = [
